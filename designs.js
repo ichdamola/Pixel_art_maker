@@ -19,14 +19,11 @@ function makeGrid() {
                 var gridColor = $("#colorPicker").val();
                 $(this).attr('bgcolor', gridColor);//apply color
             });
-
-            grid.on('dblclick', 'td', function() {
-            	$(this).remove();//remove color
-            });
         };
 
 
          $("#button").click( function(event){
+            $("table tr").remove();
             event.preventDefault(); //prevent refresh with submit
             makeGrid(); //create grid
             })
